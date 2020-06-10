@@ -110,7 +110,7 @@ table {
 }
 
 #loading #preloader:after {
-  content: "Phly is loading";
+  content: "MDC is loading";
   /* Text under the circles */
   position: absolute;
   text-transform: uppercase;
