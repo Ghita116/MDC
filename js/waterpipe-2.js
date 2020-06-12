@@ -14,7 +14,7 @@
     var pluginName = "waterpipe",
         defaults = {
             //Smoke
-            gradientStart: '#00c8aa',
+            gradientStart: '#FF5722',
             gradientEnd: '#FFD700',
             smokeOpacity: 0.1,
             numCircles: 2,
