@@ -5,12 +5,14 @@ $(document).ready(function() {
         
         // Get input field values of the contact form
         var user_name       = $('input[name=name]').val();
+        var user_phone      = $('input[name=number]').val();
+        var user_type       = $('input[name=student, mentor]').val();
         var user_email      = $('input[name=email-address]').val();
         var user_subject    = $('input[name=subject]').val();
         var user_message    = $('textarea[name=message]').val();
        
         // Datadata to be sent to server
-        post_data = {'userName':user_name, 'userEmail':user_email, 'userSubject':user_subject, 'userMessage':user_message};
+        post_data = {'userName':user_name, 'userEmail':user_email, 'userSubject':user_subject, 'userMessage':user_message, 'userPhone':user_phone};
        
         // Ajax post data to server
         $.post('php/contact-me.php', post_data, function(response){  

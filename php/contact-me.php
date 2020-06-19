@@ -1,8 +1,8 @@
 <?php
 if($_POST) {
 
-    $to_Email = 'myemail@email.com'; // Write your email here to receive the form submissions
-    $subject = 'New message from PHLY'; // Write the subject you'll see in your inbox
+    $to_Email = 'marketing.maisondescours@gmail.com'; // Write your email here to receive the form submissions
+    $subject = 'New message from microsite MDC'; // Write the subject you'll see in your inbox
    
     // Use PHP To Detect An Ajax Request
     if(!isset($_SERVER['HTTP_X_REQUESTED_WITH']) AND strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) != 'xmlhttprequest') {
@@ -36,7 +36,7 @@ if($_POST) {
     }
 
     // To avoid the spammy bots, you can change the value of the minimum characters required. Here it's <20
-    if(strlen($_POST["userMessage"])<20) {
+    if(strlen($_POST["userMessage"])<1) {
         $output = json_encode(array('type'=>'error', 'text' => '<i class="fas fa-times"></i> Too short message! Take your time and write a few words.'));
         die($output);
     }
@@ -52,7 +52,8 @@ if($_POST) {
     // Body of the Email received in your Mailbox
     $emailcontent = 'Hey! You have received a new message from the visitor <strong>'.$_POST["userName"].'</strong><br/><br/>'. "\r\n" .
                 'His message: <br/> <em>'.$_POST["userMessage"].'</em><br/><br/>'. "\r\n" .
-                '<strong>Feel free to contact '.$_POST["userName"].' via email at : '.$_POST["userEmail"].'</strong>' . "\r\n" ;
+                '<strong>Feel free to contact '.$_POST["userName"].' via email at : '.$_POST["userEmail"].'</strong>' . "\r\n".
+                'or on'.$_POST["userPhone"].'</strong>' . "\r\n";
                 
     $Mailsending = @mail($to_Email, $subject, $emailcontent, $headers);
    

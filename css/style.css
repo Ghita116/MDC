@@ -265,7 +265,7 @@ a {
 }
 
 a:hover {
-  color: #00af94;
+  color: #eaf54d8c;
   text-decoration: none !important;
   outline: none !important;
 }
@@ -321,7 +321,7 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
 
 h1 {
   font-size: 40px;
-  font-family: Montserrat, "Helvetica Neue", "Lucida Grande", Arial, Verdana, sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", "Lucida Grande", Arial, Verdana, sans-serif;
   font-weight: 700;
 }
 
@@ -456,12 +456,12 @@ sup {
   overflow: hidden;
   top: 0;
   left: -50%;
-  background: hsla(60, 54%, 69%, 0.39);
+  background: hsla(60, 7%, 16%, 0.253);
   width: 100%;
   height: 100%;
   -webkit-transition: all 0.5s cubic-bezier(0.7, 0, 0.3, 1);
   transition: all 0.5s cubic-bezier(0.7, 0, 0.3, 1);
-  border-right: 1px solid #e2e2c641;
+  border-right: 1px solid #31312741;
 }
 
 .overlay.skew-part {
@@ -598,7 +598,7 @@ sup {
 /* 3. More informations ................ */
 /* ------------------------------------- */
 #right-side {
-  background: #f5f6f7;
+  background: #ffffff;
   position: relative;
   overflow: auto;
   -webkit-transform: translate3d(100%, 0, 0);
@@ -625,24 +625,41 @@ sup {
 }
 
 #right-side .content h1, #right-side .content h2, #right-side .content h3, #right-side .content h4, #right-side .content h5, #right-side .content h6 {
-  color: #FF5722;
+  color: #747c83;
 }
 
 #right-side .content h3 {
-  font-family: Montserrat, "Helvetica Neue", "Lucida Grande", Arial, Verdana, sans-serif;
-  text-transform: uppercase;
-  font-weight: 500;
+  font-family: "Open Sans", "Helvetica Neue", "Lucida Grande", Arial, Verdana, sans-serif;
+  text-transform: none;
+  color: #747c83;
+  font-weight: 700;
+  font-size: 100%;
+  line-height: 0;
 }
-
+#right-side .content h6 {
+  font-family: "Open Sans", "Helvetica Neue", "Lucida Grande", Arial, Verdana, sans-serif;
+  text-transform: none;
+  font-weight: 600;
+  padding-left: 20%;
+  line-height: 0;
+}
+#right-side .content h1 {
+  color: #FF5722;
+  line-height: 1;
+  padding-bottom: 1%;
+}
 #right-side .content span.separator {
   display: block;
   height: 2px;
-  background: #FFFFFF;
+  background: #b0b4b8;
   width: 100%;
-  margin: 50px 0 60px;
+  margin: 40px 0 30px;
 }
 #right-side .content p {
   color: #747c83;
+  font-family: "Open Sans", "Helvetica Neue", "Lucida Grande", Arial, Verdana, sans-serif;
+  text-transform: none;
+  font-weight: 400;
 }
 
 #right-side .content .photo-line figure {
@@ -1230,6 +1247,9 @@ sup {
 
 #contact-form {
   margin-top: 40px;
+}
+#contact-form .form-group label {
+  color: #FF5722 !important;
 }
 
 #contact-form ::-webkit-input-placeholder {
