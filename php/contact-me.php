@@ -44,7 +44,7 @@ if($_POST) {
     // Proceed with PHP email
     $headers = 'MIME-Version: 1.0' . "\r\n";
     $headers .= 'Content-type:text/html;charset=UTF-8' . "\r\n";
-    $headers .= 'From: PHLY Template <noreply@yourdomain.com>' . "\r\n"; // As an example, the 'From' address should be set to something like 'noreply@yourdomain.com' in order to be based on the same domain as the form.
+    $headers .= 'From: PHLY Template <maisondescours.ma>' . "\r\n"; // As an example, the 'From' address should be set to something like 'noreply@yourdomain.com' in order to be based on the same domain as the form.
     $headers .= 'Reply-To: '.$_POST["userEmail"]."\r\n";
     
     'X-Mailer: PHP/' . phpversion();

@@ -109,7 +109,7 @@ table {
 #loading {
     width: 100vw;
     height: 100vh;
-    background: $ebony-clay;
+    background: $black;
     position: fixed;
     z-index: 999;
 
@@ -127,9 +127,9 @@ table {
             position: absolute;
             text-transform: uppercase;
             font-size: 12px;
-            font-weight: 400;
-            color: lighten($shark, 15%);
-            letter-spacing: 1px;
+            font-weight: 700;
+            color: $peace;
+            letter-spacing: 2px;
             font-family: $second-font;
             top: 90px;
             width: 100%;
@@ -141,7 +141,7 @@ table {
 
         span {
             position: absolute;
-            border: 8px solid $caribbean-green;
+            border: 8px solid $magical_pink;
             border-top: 8px solid transparent;
             border-radius: 999px;
 
@@ -204,7 +204,7 @@ table {
 /* ------------------------------------- */
 
 body {
-    background: $ebony-clay;
+    background: $black;
     font-family: $font-family;
     color: $white;
     @include font-smoothing(on);
@@ -293,7 +293,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: 40px;
+    font-size: 60px;
     font-family: $second-font;
     font-weight: 700;
 }
@@ -302,6 +302,7 @@ h2 {
     font-size: 22px;
     margin-top: 15px;
     margin-bottom: 30px;
+    line-height: 1.4em;
 }
 
 h3 {
@@ -385,12 +386,14 @@ sup {
 .light-btn {
     background: transparent;
     font-weight: 600;
-    padding: 0.7em 2em;
+    padding: 1.2em 2.4em;
     color: $white;
     margin-right: 10px;
     border: 2px solid $white;
     display: block;
     float: left;
+        border-radius: 7px;
+        cursor: pointer !important;
 
     &:hover {
         background: $white;
@@ -400,17 +403,19 @@ sup {
 }
 
 .action-btn {
-    background: $caribbean-green;
-    font-weight: 600;
-    padding: 0.7em 2em;
+    background: $magical_pink;
+    font-weight: bold;
+    padding: 1.2em 2.4em;
     color: $white;
-    border: 2px solid $caribbean-green;
+    border: 2px solid $magical_pink;
     display: block;
     float: left;
+    border-radius: 7px;
 
+        cursor: pointer !important;
     &:hover {
         background: $white;
-        color: $shark;
+        color: $shark !important;
         border-color: $white;
     }
 }
@@ -430,11 +435,10 @@ sup {
     overflow: hidden;
     top: 0;
     left: -50%;
-    background: rgba($ebony-clay, 0.8);
+    background: rgba($black, 0.6);
     width: 100%;
     height: 100%;
     transition:all  0.5s cubic-bezier(0.7, 0, 0.3, 1);
-    border-right: 1px solid darken($ebony-clay, 5%);
 
     &.skew-part {
         @include skew(-25, 0);
@@ -547,7 +551,7 @@ sup {
 /* ------------------------------------- */
 
 #right-side {
-    background: $athens-gray;
+    background: $white;
     position: relative;
     overflow: auto;
     transform: translate3d(100%, 0, 0);
@@ -561,14 +565,32 @@ sup {
 
     .content {
         width: 100%;
-        padding: 8% 10% 0;
+        padding: 100px 0 0;
         text-align: left;
         @include font-smoothing;
         opacity: 1;
         visibility: visible;
 
+        .inner-content {
+            padding-left: 10%;
+            padding-right: 10%;
+            margin-bottom: 100px;
+
+            &.with_max {
+                max-width: 1200px;
+            }
+        }
+
+        .full-width-block {
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
         h1, h2, h3, h4, h5, h6 {
-            color: $raven;
+            color: $black;
         }
 
         h3 {
@@ -586,180 +608,182 @@ sup {
         }
 
         p {
-            color: $dove-gray;
+            color: $peace;
         }
 
         .photo-line {
             figure {
-                padding: 0 15px 0;
-                margin-bottom: 30px;
-                width: calc(50% - 30px);
-
-                &.clear-second {
-                    clear: both;
-                }
+                padding: 0;
+                margin: 0;
+                background: $black;
+                position: relative;
 
                 a.box-picture {
-                    overflow: hidden;
-                    width: 100%;
-                    display: grid;
-                    position: relative;
-
-                    p {
-                        bottom: 50%;
-                        line-height: 1;
-                        height: auto;
+                        overflow: hidden;
                         width: 100%;
-                        text-align: center;
-                        color: $white;
-                        font-family: $second-font;
-                        text-transform: uppercase;
-                        font-size: 1em;
-                        letter-spacing: 2px;
-                        left: 0;
-                        opacity: 0;
-                        position: absolute;
-                        transform: translateY(50%);
-                        transition:all  0.3s cubic-bezier(0.42, 0, 0.58, 1);
-                    }
-                }
+                        display: grid;
+                        position: relative;
 
-                a.box-picture:hover {
-                    background: $black;
+                        p {
+                            bottom: 50%;
+                            line-height: 1;
+                            height: auto;
+                            width: 100%;
+                            text-align: center;
+                            color: $white;
+                            font-family: $second-font;
+                            text-transform: uppercase;
+                            font-size: 1em;
+                            letter-spacing: 2px;
+                            left: 0;
+                            opacity: 0;
+                            position: absolute;
+                            transform: translateY(50%);
+                            transition:all  0.3s cubic-bezier(0.42, 0, 0.58, 1);
+                        }
+                    }
+
+                    a.box-picture:hover {
+                        background: $black;
+
+                        img {
+                            opacity: 0.5;
+                        }
+
+                        p {
+                            opacity: 1;
+                        }
+                    }
 
                     img {
-                        opacity: 0.5;
+                        overflow: hidden;
+                        transition:all  0.3s cubic-bezier(0.42, 0, 0.58, 1);
+                        backface-visibility: hidden;
+                        transform: scale(1);
+                        transition:all  $long-transition cubic-bezier(0.215, 0.61, 0.355, 1);
                     }
 
-                    p {
-                        opacity: 1;
+                figcaption {
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    width: 100%;
+
+                    
+
+                    .photo-details {
+                        background: rgba($black,0.8);
+                        padding: 2em 4em;
+                        text-align: left;
+                        color: $peace;
+
+                        h4 {
+                            font-weight: 800;
+                            margin-bottom: 0.5em;
+                            text-transform: uppercase;
+                            font-size: 2em;
+                            opacity: 1;
+                            color: $white;
+                        }
+
+                        span.border {
+                            display: block;
+                            height: 1px;
+                            background: $white;
+                            opacity: 0.2;
+                            width: 100%;
+                            margin: 0.8em 0 1em;
+                            border: none !important;
+                        }
+
+                        p {
+                            font-size: 0.9em;
+                            color: $dusty-gray;
+                            font-weight: 500;
+                            line-height: 1.2;
+                        }
                     }
                 }
+            }
+        }
 
-                img {
-                    overflow: hidden;
-                    transition:all  0.3s cubic-bezier(0.42, 0, 0.58, 1);
-                    backface-visibility: hidden;
-                    transform: scale(1);
-                    transition:all  $long-transition cubic-bezier(0.215, 0.61, 0.355, 1);
+        .get_now {
+            background: $magical_pink;
+            padding: 150px 0;
+            margin-bottom: 100px;
+
+            h3 {
+                color: $white;
+                font-size: 105px;
+                line-height: 1;
+                small {
+                    font-size: 25%;
+                    opacity: 0.7;
+                    letter-spacing: 2px;
                 }
+            }
 
-                .photo-details {
+            button#valid-form {
+                padding: 1.5em 3em;
+                font-size: 1em;
+                display: block;
+                margin: 0;
+                background: $magical_pink;
+                color: $white;
+                border-radius: 7px;
+                font-weight: 700;
+                width: auto;
+                line-height: 10px;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+
+                &:hover {
+                    background: darken($magical_pink, 5%);
+                    color: $white;
+                }
+            }
+
+            .get_now_btn {
+                background: transparent;
+                font-weight: 700;
+                padding: 1.5em 3em;
+                font-size: 1em;
+                color: $white;
+                border: 2px solid $white;
+                display: inline-block;
+                margin: 0 auto ;
+                width: auto;
+                border-radius: 7px;
+                line-height: 10px;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                cursor: pointer !important;
+
+                &:hover {
                     background: $white;
-                    padding: 1em;
-                    text-align: left;
-                    color: $dove-gray;
-
-                    h4 {
-                        font-weight: 800;
-                        margin-bottom: 1em;
-                        text-transform: uppercase;
-                        font-size: 0.8em;
-                        opacity: 1;
-                        color: $dove-gray;
-                    }
-
-                    span.border {
-                        display: block;
-                        height: 2px;
-                        background: $caribbean-green;
-                        width: 10%;
-                        margin: 0.8em 0 1em;
-                    }
-
-                    p {
-                        font-size: 0.9em;
-                        color: $dusty-gray;
-                        font-weight: 500;
-                        line-height: 1.2;
-                    }
+                    color: $shark;
+                    border-color: $white;
                 }
             }
         }
     }
 }
 
-.widget-angle-top-right {
+.widget-angle {
     position: absolute;
-    top: 0;
-    right: 0;
-    background: transparent;
+    top: 25px;
+    left: 25px;
+    background: rgba($white,0.1);
     border: none;
     padding: 0;
-    color: $caribbean-green;
+    color: $white;
     font-size: 1em;
-    border-top: 50px solid $shark;
-    border-left: 50px solid transparent;
+    padding: 0.8em 1.6em;
+    border-radius: 7px;
+    text-align: center;
 
     span.icon-text {
         font-family: $second-font;
-        font-weight: 700;
-        position: absolute;
-        top: -47px;
-        left: -22px;
-    }
-}
-
-.widget-angle-bottom-right {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    background: transparent;
-    border: none;
-    padding: 0;
-    color: $caribbean-green;
-    font-size: 1em;
-    border-bottom: 50px solid $shark;
-    border-left: 50px solid transparent;
-
-    span.icon-text {
-        font-family: $second-font;
-        font-weight: 700;
-        position: absolute;
-        top: 23px;
-        left: -22px;
-    }
-}
-
-.widget-angle-bottom-left {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    background: transparent;
-    border: none;
-    padding: 0;
-    color: $caribbean-green;
-    font-size: 1em;
-    border-bottom: 50px solid $shark;
-    border-right: 50px solid transparent;
-
-    span.icon-text {
-        font-family: $second-font;
-        font-weight: 700;
-        position: absolute;
-        top: 23px;
-        left: 7px;
-    }
-}
-
-.widget-angle-top-left {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: transparent;
-    border: none;
-    padding: 0;
-    color: $caribbean-green;
-    font-size: 1em;
-    border-top: 50px solid $shark;
-    border-right: 50px solid transparent;
-
-    span.icon-text {
-        font-family: $second-font;
-        font-weight: 700;
-        position: absolute;
-        top: -47px;
-        left: 7px;
     }
 }
 
@@ -767,13 +791,20 @@ sup {
     position: fixed;
     top: 15px;
     right: 15px;
-    background: transparent;
+    background: rgba($white,0.1);
     border: none;
-    color: $raven;
-    font-size: 1.5em;
+    padding: 0;
+    color: $peace;
+    font-size: 1em;
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 7px;
+    text-align: center;
+    line-height: 2.5em;
 
     &:hover {
-        transform: scale(1.2);
+        background: rgba($white,1);
+        color: $black;
     }
 
     &.hide-close {
@@ -798,7 +829,7 @@ sup {
         height: 100%;
         margin: 0;
         @include border-radius(0);
-        background-color: rgba($raven, 1);
+        background-color: rgba($black, 0.8);
         filter: "alpha(opacity=40)";
         -ms-filter: "alpha(opacity=40)";
     }
@@ -814,7 +845,7 @@ sup {
     }
 
     .mCSB_dragger .mCSB_dragger_bar {
-        background-color: rgba($caribbean-green, 1);
+        background-color: rgba($peace, 1);
     }
 }
 
@@ -846,7 +877,7 @@ sup {
 .dialog__overlay {
     position: absolute;
     z-index: 1;
-    background: rgba($tuna, 0.9);
+    background: rgba($black, 0.7);
     opacity: 0;
     transition: opacity 0.3s;
 }
@@ -867,10 +898,11 @@ sup {
     z-index: 5;
     opacity: 0;
     overflow: hidden;
-    background: url(../img/1.png) center;
+    background: url(../img/background-newsletter.jpg) center;
     background-size: cover;
     // background: $ebony-clay;
-    border: 10px solid $shark;
+    border: 10px solid $black;
+    border-radius: 7px;
 
     &::before {
         content: " ";
@@ -880,8 +912,8 @@ sup {
         width: 100%;
         height: 100%;
         z-index: -1;
-        border: 1px solid $caribbean-green;
-        background: rgba($ebony-clay, 0.8);
+        border: 1px solid $magical_pink;
+        background: rgba($black, 0.8);
     }
 }
 
@@ -892,19 +924,22 @@ sup {
 .dialog {
     .close-newsletter {
         position: absolute;
-        top: 0;
-        right: 0;
+        top: 15px;
+        right: 15px;
+        background: rgba($white,0.1);
         border: none;
-        background: transparent;
-        width: 40px;
-        height: 40px;
-        line-height: 35px;
-        color: $white;
-        font-size: 20px;
-        opacity: 0.5;
+        padding: 0;
+        color: $peace;
+        font-size: 1em;
+        width: 2.5em;
+        height: 2.5em;
+        border-radius: 7px;
+        text-align: center;
+        line-height: 2.5em;
 
         &:hover {
-            opacity: 1;
+            background: rgba($white,1);
+            color: $black;
         }
     }
 
@@ -947,14 +982,15 @@ sup {
         margin-top: 2em;
 
         ::placeholder {
-            color: $dove-gray !important;
+            color: $peace !important;
+            font-weight: normal !important;
         }
 
         .form-group {
             margin-bottom: 1em;
 
             .fa {
-                color: $raven;
+                color: $peace;
                 position: absolute;
                 text-align: center;
                 top: 15px;
@@ -962,19 +998,17 @@ sup {
             }
 
             .form-control {
-                text-align: center;
-                background: $white;
+                background: lighten($peace, 28.5%);
                 border: none;
-                @include border-radius(0);
+                border-radius: 7px;
                 box-shadow: none;
-                height: 50px;
-                font-weight: 600;
+                font-weight: bold;
                 outline: medium none;
-                padding: 0 1em;
+                padding: 1.8em 3em 1.8em 0.8em;
                 width: 100%;
-                margin: auto;
                 color: $black;
                 transition:all  0.3s cubic-bezier(0, 0, 0.58, 1);
+                text-align: center;
 
                 &:hover, &:focus {
                     box-shadow: none;
@@ -982,24 +1016,21 @@ sup {
             }
 
             button.submit {
-                border: 2px solid $caribbean-green;
-                @include border-radius(0);
-                font-family: $font-family;
-                background: $caribbean-green;
-                color: $white;
-                height: 50px;
-                padding: 1em 0;
+                padding: 1.5em 3em;
                 font-size: 1em;
-                font-weight: 700;
-                letter-spacing: 1px;
-                text-transform: uppercase;
-                line-height: 1;
-                width: 70%;
+                display: block;
                 margin: 20px auto 0;
-                transition:all  0.3s cubic-bezier(0, 0, 0.58, 1);
+                background: $magical_pink;
+                color: $white;
+                border-radius: 7px;
+                font-weight: 700;
+                width: auto;
+                line-height: 10px;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
 
                 &:hover {
-                    background: darken($caribbean-green, 5%);
+                    background: darken($magical_pink, 5%);
                     color: $white;
                 }
             }
@@ -1085,6 +1116,7 @@ sup {
 /* ------------------------------------- */
 
 .info-contact {
+    margin: 0;
     margin-bottom: 30px;
 
     .item-map {
@@ -1101,19 +1133,20 @@ sup {
         .contact-item {
             padding: 15px 0;
             font-size: 14px;
-            text-align: center;
+            text-align: left;
 
             i {
-                color: $caribbean-green;
-                font-size: 2em;
+                color: $peace;
+                font-size: 3em;
+                margin-bottom: 10px;
             }
 
             a {
                 font-weight: 600;
-                color: $raven;
+                color: $peace;
 
                 &:hover {
-                    color: $caribbean-green;
+                    color: $magical_pink;
                 }
             }
         }
@@ -1122,19 +1155,21 @@ sup {
 
 #contact-form {
     margin-top: 40px;
+    max-width: 90%;
 
     ::placeholder {
-        color: $dove-gray !important;
+        color: $peace !important;
+        font-weight: normal !important;
     }
 
     .form-control {
-        background: $white;
-        border: 1px solid rgba($black, 0.1);
-        @include border-radius(0);
+        background: lighten($peace, 28.5%);
+        border: none;
+        border-radius: 7px;
         box-shadow: none;
-        font-weight: 400;
+        font-weight: bold;
         outline: medium none;
-        height: 40px;
+        padding: 1.8em 3em 1.8em 0.8em;
         width: 100%;
         color: $black;
         transition:all  0.3s cubic-bezier(0, 0, 0.58, 1);
@@ -1147,23 +1182,26 @@ sup {
 
     textarea.form-control {
         min-height: 150px;
+        padding-top: 1em;
     }
 
     button#valid-form {
         font-weight: 400;
-        padding: 1em 2em;
+        padding: 1.5em 3em;
         font-size: 1em;
         display: block;
-        margin: 0 auto 0;
-        background: $caribbean-green;
+        margin: 0;
+        background: $magical_pink;
         color: $white;
-        @include border-radius(0);
+        border-radius: 7px;
         font-weight: 700;
-        width: 100%;
+        width: auto;
         line-height: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
 
         &:hover {
-            background: darken($caribbean-green, 5%);
+            background: darken($magical_pink, 5%);
             color: $white;
         }
     }
@@ -1171,25 +1209,25 @@ sup {
 
 #block-answer {
     min-height: 60px;
-    margin-top: 1em;
-    text-align: center;
-    color: $raven;
+    margin-top: 1.5em;
+    text-align: left;
+    color: $peace;
 }
 
 .success-message, .error-message {
-    color: $raven;
+    color: $peace;
 
     p {
-        color: $raven !important;
+        color: $peace !important;
     }
 
-    .ion-checkmark-round {
+    .fa-check {
         color: $green-alert;
     }
 }
 
 .error-message {
-    .ion-close-round {
+    .fa-times {
         color: $torch-red;
     }
 }
@@ -1233,11 +1271,11 @@ sup {
         transition:all  0.3s cubic-bezier(0, 0, 0.58, 1);
 
         &:hover {
-            color: rgba($caribbean-green, 1);
+            color: rgba($magical_pink, 1);
             background: transparent;
 
             i {
-                color: rgba($caribbean-green, 1);
+                color: rgba($magical_pink, 1);
                 transform: scale(1.2);
             }
         }
@@ -1263,329 +1301,11 @@ footer {
 }
 
 /* ------------------------------------- */
-/* VARIANT CLOUD ....................... */
-/* ------------------------------------- */
-
-#cloud-animation {
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: -1;
-    position: fixed;
-
-    img {
-        width: 100%;
-        left: 0;
-        top: 0;
-        position: absolute;
-    }
-}
-
-@keyframes animCloud {
-    from {
-        transform: translateX(100%);
-    }
-
-    to {
-        transform: translateX(-100%);
-    }
-}
-
-
-#cloud1 {
-    animation:animCloud 25s infinite linear;
-}
-
-#cloud2 {
-    animation:animCloud 35s infinite linear;
-}
-
-#cloud3 {
-    animation:animCloud 45s infinite linear;
-}
-
-#cloud4 {
-    animation:animCloud 55s infinite linear;
-}
-
-/* ------------------------------------- */
-/* VARIANT YOUTUBE ..................... */
-/* ------------------------------------- */
-
-.mbYTP_wrapper {
-    width: 100vw !important;
-    min-width: 0 !important;
-    left: 0 !important;
-}
-
-.ytb-overlay {
-    background: rgba($ebony-clay, 0.6);
-}
-
-.light-overlay {
-    background: rgba($ebony-clay, 0.5) !important;
-}
-
-#player-nav {
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    text-align: center;
-
-    li {
-        display: inline-block;
-        background: rgba($caribbean-green, 0.4);
-        height: 40px;
-        width: 40px;
-        line-height: 40px;
-        @include border-radius(0);
-        transition:all  $fast-transition cubic-bezier(0.42, 0, 0.58, 1);
-
-        &:hover {
-            background: rgba($caribbean-green, 0.8);
-
-            a {
-                color: $white;
-            }
-        }
-
-        a {
-            display: block;
-            width: 100%;
-            height: 100%;
-            font-size: 15px;
-            color: rgba($white, 0.5);
-        }
-    }
-}
-
-/* ------------------------------------- */
-/* VARIANT GRADIENT .................... */
-/* ------------------------------------- */
-
-.no-background {
-    background: none !important;
-}
-
-#gradient {
-    width: 100%;
-    height: 100%;
-    opacity: 0.8;
-    padding: 0px;
-    margin: 0px;
-}
-
-/* ------------------------------------- */
-/* VARIANT CONSTELLATION ............... */
-/* ------------------------------------- */
-
-#constellationel {
-    z-index: 1;
-    left: 0;
-    top: 0;
-    position: absolute;
-}
-
-/* ------------------------------------- */
-/* VARIANT FLAT SURFACE SHADER ......... */
-/* ------------------------------------- */
-
-#fss-part {
-    background: transparent !important;
-}
-
-#container {
-    height: 100%;
-    position: absolute;
-    width: 70%;
-    left: 30%;
-}
-
-.back-fss {
-    height: 100%;
-    position: absolute;
-    width: 100%;
-
-    canvas {
-        width: 100% !important;
-    }
-}
-
-/* ------------------------------------- */
-/* VARIANT MOZAIC ...................... */
-/* ------------------------------------- */
-
-#dotty {
-    position: fixed;
-    top: 0;
-    left: 0;
-}
-
-/* ------------------------------------- */
-/* VARIANT WINTER ...................... */
-/* ------------------------------------- */
-
-#xmas {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-}
-
-/* ------------------------------------- */
-/* VARIANT RAIN ........................ */
-/* ------------------------------------- */
-
-#rainy {
-    height: 100%;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-}
-
-/* ------------------------------------- */
-/* VARIANT STAR WARS ................... */
-/* ------------------------------------- */
-
-#starfield {
-    position: fixed !important;
-}
-
-/* ------------------------------------- */
-/* VARIANT BUBBLE ...................... */
-/* ------------------------------------- */
-
-#bubble {
-    background: $ebony-clay;
-    background-image: url(../img/bubble-pattern.png);
-    background-repeat: repeat;
-    position: fixed;
-    top: 0;
-    left: 0;
-    overflow: hidden;
-}
-
-/* ------------------------------------- */
-/* VARIANT FIREWORKS ................... */
-/* ------------------------------------- */
-
-#fireworks {
-    background: transparent;
-    position: fixed;
-    top: 0;
-    left: 50%;
-    overflow: hidden;
-}
-
-/* ------------------------------------- */
-/* VARIANT WATERPIPE ................... */
-/* ------------------------------------- */
-
-#wavybg-wrapper {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-
-    canvas {
-        width: 100%;
-        height: 100%;
-    }
-}
-
-/* ------------------------------------- */
-/* VARIANT SQUARE ...................... */
-/* ------------------------------------- */
-
-#square-canvas {
-    display: block;
-    position:fixed;
-    top:0;
-    right: 0;
-    transform: rotate(-90deg);
-}
-
-/* ------------------------------------- */
-/* VARIANT STARS ....................... */
-/* ------------------------------------- */
-
-#stars_effect {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: $white;
-}
-
-/* ------------------------------------- */
-/* VARIANT SMOOTH BUBBLES .............. */
-/* ------------------------------------- */
-
-body.smooth-bubbles {
-    background: $port-gore;
-}
-
-canvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-
-    &#canvasbg {
-        background: transparent;
-    }
-}
-
-/* ------------------------------------- */
-/* VARIANT FLASH ....................... */
-/* ------------------------------------- */
-
-#flash {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0.8;
-    padding: 0px;
-    margin: 0px;
-}
-
-/* ------------------------------------- */
-/* VARIANT LIQUID ...................... */
-/* ------------------------------------- */
-
-.wrap {
-    position: fixed;
-    z-index: -30;
-    top: 0;
-    left: 0;
-    overflow: hidden;
-    height: 100vh;
-    width: 100vw;
-    margin: auto;
-    background-image: linear-gradient(-206deg, $razzmatazz 0%, $school-bus-yellow 100%);
-}
-
-canvas {
-    width: 100%;
-    height: 100%;
-}
-
-/* ------------------------------------- */
 /* GALLERY PHOTOS ...................... */
 /* ------------------------------------- */
 
 .pswp__bg {
-    background: $ebony-clay;
+    background: $black;
 }
 
 .pswp__caption__center .border {
@@ -1593,6 +1313,7 @@ canvas {
 }
 
 .pswp__caption h4 {
+    font-family: $second-font;
     margin-bottom: 10px !important;
 }
 
@@ -1697,12 +1418,22 @@ canvas {
 
     .mCSB_scrollTools-left {
         right: 0 !important;
+    }         
+
+    #right-side .content .photo-line figure {
+        margin-bottom: 1px !important;
     }
 }
 
 
 /* Small Devices, Tablets */
 @include tablet {
+
+    h1.text-intro {
+        font-size: 55px;
+        line-height: 1.1em;
+    }
+
     .light-btn {
         max-width: 70%;
         min-width: 60%;
@@ -1746,6 +1477,10 @@ canvas {
             overflow: hidden;
         }
     }
+
+    #contact-form {
+        max-width: 100%;
+    }
 }
 
 
@@ -1788,13 +1523,8 @@ canvas {
     }
 
     .dialog {
-        .close-newsletter {
-            top: 2px;
-            right: 5px;
-        }
-
         .dialog-inner {
-            padding: 40px 20px 50px;
+            padding: 70px 20px 50px;
 
             h4 {
                 font-size: 25px;
@@ -1811,6 +1541,18 @@ canvas {
         p.notify-valid {
             font-size: 12px;
         }
+    }
+
+    #right-side .content .get_now {
+        padding-top: 100px;
+    }
+
+    #right-side .content .photo-line figure figcaption .photo-details {
+        padding: 1em;
+    }
+
+    #right-side .content .photo-line figure figcaption .photo-details h4 {
+        font-size: 1.5em;
     }
 }
 
@@ -1840,10 +1582,6 @@ canvas {
     }
 
     .dialog {
-        .close-newsletter {
-            top: 2px;
-            right: 5px;
-        }
 
         .dialog-inner {
             padding: 40px 20px 50px;
@@ -1857,17 +1595,19 @@ canvas {
 
     #subscribe {
         #notifyMe {
+            max-width: 90%;
             margin-top: 10px;
 
             .form-group {
                 .form-control {
-                    width: 70%;
+                    width: 60%;
                     margin: 0;
+                    margin-right: 5%;
                     float: left;
                 }
 
                 button.submit {
-                    width: 30%;
+                    width: 35%;
                     margin: 0;
                     float: left;
                 }
@@ -1881,5 +1621,9 @@ canvas {
         p.notify-valid {
             font-size: 12px;
         }
+    }
+
+    #right-side .content .get_now {
+        padding-top: 100px;
     }
 }
