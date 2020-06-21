@@ -14,13 +14,13 @@ $STORE_MODE = "file";
 //$LIST_ID =  "660b21bfd7";
 			 
 // After $_SERVER["DOCUMENT_ROOT"]." , write the path to your .txt to save the emails of the subscribers
-$STORE_FILE = $_SERVER["DOCUMENT_ROOT"]."/subscription-list.txt";
+$STORE_FILE = $_SERVER["DOCUMENT_ROOT"]."MDC/subscription-list.txt";
 
 /* ************************************ */
 // Don't forget to check the path below
 /* ************************************ */
  
-require('MailChimp.php');
+//require('MailChimp.php');
 
 /* ***************************************************** */
 // For the part below, no interventions are required
