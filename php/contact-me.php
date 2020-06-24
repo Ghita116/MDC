@@ -64,7 +64,7 @@ if($_POST) {
         die($output);
         
     } else {
-        $output = json_encode(array('type'=>'message', 'text' => '<i class="fas fa-check"></i> Hello '.$_POST["userName"] .', Your message has been sent, we will get back to you asap !'));
+        $output = json_encode(array('type'=>'message', 'text' => '<i class="fas fa-check"></i> Merci '.$_POST["userName"] .', Votre message a été envoyé avec succès. '));
         die($output);
     }
 }
